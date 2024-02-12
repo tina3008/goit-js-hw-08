@@ -83,13 +83,8 @@ setGallery.addEventListener("click", (event) => {
     let galleryImage = event.target.getAttribute("data-source");
     console.log(galleryImage);
 
-    const instance = basicLightbox.create(
-      `
-      <img src="${galleryImage}"  >
-    `,
-      {}
-    );
-  console.log(instance)
+    const instance = basicLightbox.create(`<img src="${galleryImage}">`);
+
     instance.show();
   } else {
     return alert(`you didn't choice any image`);
