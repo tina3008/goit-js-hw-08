@@ -68,8 +68,8 @@ const imgGallery = images
   .map(
     (image) => `<li class="gallery-item">
       <a class="gallery-link" href="${image.original}">
-      <img class="gallery-image"; src= "${image.preview}";
-      data-source="${image.original}";
+      <img class="gallery-image"; src= "${image.preview}"
+      data-source="${image.original}"
       alt="${image.description}">
       </a></li>`
   )
@@ -80,8 +80,9 @@ setGallery.addEventListener("click", (event) => {
   if (event.target.nodeName === "IMG") {
     event.preventDefault(); 
 
-    // const instance = basicLightbox.create(`<img src="${event.target.getAttribute("data-source")}">`);
-    const instance = basicLightbox.create(`<img src="${event.target.dataset.source}">`);
+  //  const instance = basicLightbox.create(`<img src="${event.target.getAttribute("data-source")}">`);
+  const instance = basicLightbox.create(`<img src="${event.target.dataset.source}">
+  alt="${event.target.alt}"`);
 
     instance.show();
   } 
